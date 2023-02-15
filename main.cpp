@@ -37,7 +37,7 @@ void menu()
             contact();
             break;
         case 4:
-            updates();
+            update();
             break;
         case 5:
             exit(0);
@@ -342,5 +342,5 @@ void update()
     else if(n==2)
     cout<<"Arrived"<<endl;
     else if(n==4)
-    cout<<probendl;
+    cout<<prob<<endl;
 }
