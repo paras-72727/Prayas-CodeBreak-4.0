@@ -1,11 +1,15 @@
 #include<iostream>
+#include<string>
 float report_timing,duration,temp,start_timing;
-int date;
+int date,n;
+std::string dest,prob,starting;
 using namespace std;
 void start();
 void menu();
 void admin();
 void driver();
+void contact();
+void update();
 int main()
 {
     start();
@@ -18,7 +22,7 @@ void start()
 void menu()
 {
     cout<<"\tWelcome to IDLS";
-    cout<<"\n\n1.Admin\t 2.Driver 3.Exit\n";
+    cout<<"\n\n1.Admin\t 2.Driver 3.Contact Admin 4.Updates 5.Exit\n";
     int num;
     cin>>num;
     switch (num)
@@ -30,10 +34,16 @@ void menu()
             driver();
             break;
         case 3:
+            contact();
+            break;
+        case 4:
+            updates();
+            break;
+        case 5:
             exit(0);
             break;
         default:
-            cout<<"Enter 1 or 2";
+            cout<<"Enter valid Input";
     }
 }
 void admin()
@@ -50,13 +60,15 @@ void admin()
     switch (hub)
     {
         case 1:
-            cout<<"Select Starting Point";
+            cout<<"\nSelect Starting Point";
             cout<<"\n1.Chennai\n2.Hyderabad\n3.Kochi\n4.Pune\n";
             int banglore;
+            dest = "Banglore";
             cin>>banglore;
             switch (banglore)
             {
                 case 1:
+                    starting = "Chennai";
                     duration = 7.0;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -72,6 +84,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 2:
+                    starting = "Hyderabad";
                     duration = 10;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -87,6 +100,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 3:
+                    starting = "Kochi";
                     duration = 11;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -102,6 +116,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 4:
+                    starting = "Pune";
                     duration = 15;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -119,13 +134,15 @@ void admin()
             }
             break;
         case 2:
-            cout<<"Select Starting Point";
+            cout<<"\nSelect Starting Point";
             cout<<"\n1.Pune\n2.Nagpur\n3.Indore\n4.Panji";
             int mumbai;
             cin>>mumbai;
+            dest = "Mumbai";
             switch (mumbai)
             {
                 case 1:
+                    starting = "Pune";
                     duration = 4;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -141,6 +158,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 2:
+                    starting = "Nagpur";
                     duration = 14;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -156,6 +174,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 3:
+                    starting = "Indore";
                     duration = 11;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -171,6 +190,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 4:
+                    starting = "Panji";
                     duration = 12;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -188,13 +208,15 @@ void admin()
             }
             break;
         case 3:
-            cout<<"Select Starting Point";
+            cout<<"\nSelect Starting Point";
             cout<<"\n1.Jaipur\n2.Indore\n3.Jodhpur\n4.Agra\n";
             int ahmedabad;
+            dest = "Ahmedabad";
             cin>>ahmedabad;
             switch (ahmedabad)
             {
                 case 1:
+                    starting = "Jaipur";
                     duration = 12;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -210,6 +232,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 2:
+                    starting = "Indore";
                     duration = 8;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -225,6 +248,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 3:
+                    starting = "Jodhpur";
                     duration = 8;
                     temp = report_timing - duration;
                     if(temp <= 0)
@@ -240,7 +264,8 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 4:
-                     duration = 16;
+                    starting = "Agra";
+                    duration = 16;
                     temp = report_timing - duration;
                     if(temp <= 0)
                     {
@@ -265,15 +290,20 @@ void admin()
 
 void driver()
 {
-    string prob;
-    int n;
     if(temp <= 0)
     {
         date =  date - 1;
     }
     cout<<"\nReporting Time: "<<report_timing;
     cout<<"\nStarting Time: "<<start_timing;
+    cout<<"Destination: "<<dest;
     cout<<"\nStarting Date"<<date<<endl;
+
+    
+    start();
+}
+void contact()
+{
     cout<<"1. Report Emergency\n2. Arrived\n3. Nearest Rest Stop\n4. Chat with Admin\n5. Exit\n";
     cin>>n;
     switch (n)
@@ -282,21 +312,17 @@ void driver()
                 cout<<"Explain the problem: ";
                 cin>>prob;
                 cout<<"\nOk, admin will be notified.\n";
-                driver();
                 break;
         case 2:
                 cout<<"Admin will be notified\n";
-                driver();
                 break;
         case 3:
                 cout<<"The nearest rest stop is at 72 Avenue GM Road\n";
-                driver();
                 break;
         case 4:
                 cout<<"Enter message: ";
                 cin>>prob;
                 cout<<"\nAdmin will be notified.\n";
-                driver();
                 break;
                 
         case 5:
@@ -304,7 +330,17 @@ void driver()
                 break;
         
         default:
+                cout<<"Enter Valid Input";
                 break;
     }
     start();
+}
+void update()
+{
+    if(n==1)
+    cout<<prob<<endl;
+    else if(n==2)
+    cout<<"Arrived"<<endl;
+    else if(n==4)
+    cout<<probendl;
 }
