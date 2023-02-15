@@ -1,5 +1,6 @@
 #include<iostream>
-
+float report_timing,duration,temp,start_timing;
+int date;
 using namespace std;
 void start();
 void menu();
@@ -38,8 +39,7 @@ void menu()
 void admin()
 {
     cout<<"\n\n\tAdmin\n";
-    int hub,date;
-    float report_timing,duration,temp,start_timing;
+    int hub;
     cout<<"\nEnter Reporting Date: ";
     cin>>date;
     cout<<"Enter Reporting Time in 24 hours format: ";
@@ -72,7 +72,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 2:
-                    duration = 9.43;
+                    duration = 10;
                     temp = report_timing - duration;
                     if(temp <= 0)
                     {
@@ -87,7 +87,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 3:
-                    duration = 10.37;
+                    duration = 11;
                     temp = report_timing - duration;
                     if(temp <= 0)
                     {
@@ -102,7 +102,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 4:
-                    duration = 14.30;
+                    duration = 15;
                     temp = report_timing - duration;
                     if(temp <= 0)
                     {
@@ -126,20 +126,68 @@ void admin()
             switch (mumbai)
             {
                 case 1:
-                    
+                    duration = 4;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 2:
-                    
+                    duration = 14;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 3:
-                
+                    duration = 11;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 4:
-                    
+                    duration = 12;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
             }
             break;
-        case 3:
+        /*case 3:
             cout<<"Select Starting Point";
             cout<<"\n1.Jaipur\n2.Indore\n3.Jodhpur\n4.Agra";
             int ahmedabad;
@@ -147,19 +195,67 @@ void admin()
             switch (ahmedabad)
             {
                 case 1:
-                    
+                    duration = ;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 2:
-                    
+                    duration = ;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 3:
-                    
+                    duration = ;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 4:
-                        
+                     duration = ;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;   
                     break;
             }
-            break;
+            break;*/
             defult:
                 cout<<"Enter Valid Input";
 
@@ -171,10 +267,13 @@ void driver()
 {
     string prob;
     int n;
-    
-    //cout<<"Reporting Time: "<<report_time;
-    //cout<<"Starting Time: "<<start_time;
-    //cout<<"Starting Date"<<date;
+    if(temp <= 0)
+    {
+        date =  date - 1;
+    }
+    cout<<"\nReporting Time: "<<report_timing;
+    cout<<"\nStarting Time: "<<start_timing;
+    cout<<"\nStarting Date"<<date<<endl;
     cout<<"1. Report Emergency\n2. Arrived\n3. Nearest Rest Stop\n4. Chat with Admin\n5. Exit\n";
     cin>>n;
     switch (n)
@@ -201,7 +300,7 @@ void driver()
                 break;
                 
         case 5:
-                cout<<"Exiting...";
+                cout<<"Exiting...\n";
                 break;
         default:
                 break;
