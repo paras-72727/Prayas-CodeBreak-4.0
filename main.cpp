@@ -274,7 +274,7 @@ void driver()
     cout<<"\nReporting Time: "<<report_timing;
     cout<<"\nStarting Time: "<<start_timing;
     cout<<"\nStarting Date"<<date<<endl;
-    cout<<"1. Report Emergency\n2. Arrived\n3. Nearest Rest Stop\n4. Chat with Admin\n5. Exit\n";
+    cout<<"1. Report Emergency\n2. Arrived\n3. Nearest Rest Stop\n4. Chat with Admin\n5. Exit\n6. Document Verification\n";
     cin>>n;
     switch (n)
     {
@@ -302,6 +302,15 @@ void driver()
         case 5:
                 cout<<"Exiting...\n";
                 break;
+        case 6:
+                FILE fp;
+                fopen("fp.txt","w+");
+                if(fp==NULL)
+                {
+                     cout<<"Not Verified";
+                }
+                else
+                    cout<<"Verified";
         default:
                 break;
     }
