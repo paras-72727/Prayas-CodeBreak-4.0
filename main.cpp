@@ -1,4 +1,5 @@
 #include<iostream>
+
 using namespace std;
 void start();
 void menu();
@@ -16,32 +17,194 @@ void start()
 void menu()
 {
     cout<<"\tWelcome to IDLS";
-    cout<<"\n\n\t1.Admin\t 2.Driver 3.Exit\n";
+    cout<<"\n\n1.Admin\t 2.Driver 3.Exit\n";
     int num;
     cin>>num;
     switch (num)
     {
         case 1:
             admin();
+            break;
         case 2:
             driver();
+            break;
         case 3:
             exit(0);
+            break;
         default:
             cout<<"Enter 1 or 2";
     }
 }
 void admin()
 {
-    cout<<"\tAdmin";
-    
+    cout<<"\n\n\tAdmin\n";
+    int hub,date;
+    float report_timing,duration,temp,start_timing;
+    cout<<"\nEnter Reporting Date: ";
+    cin>>date;
+    cout<<"Enter Reporting Time in 24 hours format: ";
+    cin>>report_timing;
+    cout<<"\nSelect Hub";
+    cout<<"\n1.Banglore\n2.Mumbai\n3.Ahmedabad\n\n\n";
+    cin>>hub;
+    switch (hub)
+    {
+        case 1:
+            cout<<"Select Starting Point";
+            cout<<"\n1.Chennai\n2.Hyderabad\n3.Kochi\n4.Pune\n";
+            int banglore;
+            cin>>banglore;
+            switch (banglore)
+            {
+                case 1:
+                    duration = 7.0;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
+                    break;
+                case 2:
+                    duration = 9.43;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
+                    break;
+                case 3:
+                    duration = 10.37;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
+                    break;
+                case 4:
+                    duration = 14.30;
+                    temp = report_timing - duration;
+                    if(temp <= 0)
+                    {
+                        date =  date - 1;
+                        start_timing = 24 + temp;
+                    }
+                    else
+                    {
+                        start_timing = temp;
+                    }
+                    cout<<"Start Date: "<<date;
+                    cout<<"\nStart Timing: "<<start_timing<<endl;
+                    break;
+            }
+            break;
+        case 2:
+            cout<<"Select Starting Point";
+            cout<<"\n1.Pune\n2.Nagpur\n3.Indore\n4.Panji";
+            int mumbai;
+            cin>>mumbai;
+            switch (mumbai)
+            {
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                
+                    break;
+                case 4:
+                    
+                    break;
+            }
+            break;
+        case 3:
+            cout<<"Select Starting Point";
+            cout<<"\n1.Jaipur\n2.Indore\n3.Jodhpur\n4.Agra";
+            int ahmedabad;
+            cin>>ahmedabad;
+            switch (ahmedabad)
+            {
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                        
+                    break;
+            }
+            break;
+            defult:
+                cout<<"Enter Valid Input";
 
-    menu();
+    }
+    start();
 }
+
 void driver()
 {
-    cout<<"Profile";
-
-
-    menu();
+    string prob;
+    int n;
+    
+    //cout<<"Reporting Time: "<<report_time;
+    //cout<<"Starting Time: "<<start_time;
+    //cout<<"Starting Date"<<date;
+    cout<<"1. Report Emergency\n2. Arrived\n3. Nearest Rest Stop\n4. Chat with Admin\n5. Exit\n";
+    cin>>n;
+    switch (n)
+    {
+        case 1:
+                cout<<"Explain the problem: ";
+                cin>>prob;
+                cout<<"\nOk, admin will be notified.\n";
+                driver();
+                break;
+        case 2:
+                cout<<"Admin will be notified\n";
+                driver();
+                break;
+        case 3:
+                cout<<"The nearest rest stop is at 72 Avenue GM Road\n";
+                driver();
+                break;
+        case 4:
+                cout<<"Enter message: ";
+                cin>>prob;
+                cout<<"\nAdmin will be notified.\n";
+                driver();
+                break;
+                
+        case 5:
+                cout<<"Exiting...";
+                break;
+        default:
+                break;
+    }
+    start();
 }
