@@ -187,15 +187,15 @@ void admin()
                     break;
             }
             break;
-        /*case 3:
+        case 3:
             cout<<"Select Starting Point";
-            cout<<"\n1.Jaipur\n2.Indore\n3.Jodhpur\n4.Agra";
+            cout<<"\n1.Jaipur\n2.Indore\n3.Jodhpur\n4.Agra\n";
             int ahmedabad;
             cin>>ahmedabad;
             switch (ahmedabad)
             {
                 case 1:
-                    duration = ;
+                    duration = 12;
                     temp = report_timing - duration;
                     if(temp <= 0)
                     {
@@ -210,7 +210,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 2:
-                    duration = ;
+                    duration = 8;
                     temp = report_timing - duration;
                     if(temp <= 0)
                     {
@@ -225,7 +225,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 3:
-                    duration = ;
+                    duration = 8;
                     temp = report_timing - duration;
                     if(temp <= 0)
                     {
@@ -240,7 +240,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;
                     break;
                 case 4:
-                     duration = ;
+                     duration = 16;
                     temp = report_timing - duration;
                     if(temp <= 0)
                     {
@@ -255,7 +255,7 @@ void admin()
                     cout<<"\nStart Timing: "<<start_timing<<endl;   
                     break;
             }
-            break;*/
+            break;
             defult:
                 cout<<"Enter Valid Input";
 
@@ -274,7 +274,7 @@ void driver()
     cout<<"\nReporting Time: "<<report_timing;
     cout<<"\nStarting Time: "<<start_timing;
     cout<<"\nStarting Date"<<date<<endl;
-    cout<<"1. Report Emergency\n2. Arrived\n3. Nearest Rest Stop\n4. Chat with Admin\n5. Exit\n";
+    cout<<"1. Report Emergency\n2. Arrived\n3. Nearest Rest Stop\n4. Chat with Admin\n5. Exit\n6. Document Verification\n";
     cin>>n;
     switch (n)
     {
@@ -302,6 +302,18 @@ void driver()
         case 5:
                 cout<<"Exiting...\n";
                 break;
+        case 6:
+            FILE* fp;
+            fopen("fp.txt","w+");
+            if(fp==NULL)
+            {
+                cout<<"Not Verified"<<endl;
+            }
+            else 
+            {
+                cout<<"Verified"<<endl;
+            }
+            fclose(fp);
         default:
                 break;
     }
