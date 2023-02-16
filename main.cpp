@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<fstream>
 float report_timing,duration,temp,start_timing;
 int date,n;
 std::string dest,prob,starting;
@@ -22,7 +23,7 @@ void start()
 void menu()
 {
     cout<<"\tWelcome to IDLS";
-    cout<<"\n\n1.Admin\t 2.Driver 3.Contact Admin 4.Updates 5.Exit\n";
+    cout<<"\n\n1.Admin\t 2.Driver 3.Contact Admin 4.Notification 5.Exit\n";
     int num;
     cin>>num;
     switch (num)
@@ -298,8 +299,19 @@ void driver()
     cout<<"\nStarting Time: "<<start_timing;
     cout<<"\nDestination: "<<dest;
     cout<<"\nStarting Date: "<<date<<endl;
+    cout<<"\nUpload document for verification\n";
+    FILE *f;
+    f = fopen("file.pdf","a+");
+    if(f == NULL)
+    {
+        cout<<"Not Verified\n"<<endl;
+    }
+    else
+    {
+        cout<<"Verified\n"<<endl;
+    }
+    fclose(f);
 
-    
     start();
 }
 void contact()
@@ -322,7 +334,7 @@ void contact()
                 break;
         case 4:
                 cout<<"Enter message: ";
-                std::cin>>prob;
+                getline(cin >> ws, prob);
                 cout<<"\nAdmin will be notified.\n";
                 
                 break;  
