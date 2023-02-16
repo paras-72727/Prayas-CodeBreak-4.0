@@ -135,7 +135,7 @@ void admin()
             break;
         case 2:
             cout<<"\nSelect Starting Point";
-            cout<<"\n1.Pune\n2.Nagpur\n3.Indore\n4.Panji";
+            cout<<"\n1.Pune\n2.Nagpur\n3.Indore\n4.Panji\n";
             int mumbai;
             cin>>mumbai;
             dest = "Mumbai";
@@ -296,8 +296,8 @@ void driver()
     }
     cout<<"\nReporting Time: "<<report_timing;
     cout<<"\nStarting Time: "<<start_timing;
-    cout<<"Destination: "<<dest;
-    cout<<"\nStarting Date"<<date<<endl;
+    cout<<"\nDestination: "<<dest;
+    cout<<"\nStarting Date: "<<date<<endl;
 
     
     start();
@@ -310,8 +310,9 @@ void contact()
     {
         case 1:
                 cout<<"Explain the problem: ";
-                cin>>prob;
+                getline(cin >> ws, prob); // eat whitespace
                 cout<<"\nOk, admin will be notified.\n";
+                
                 break;
         case 2:
                 cout<<"Admin will be notified\n";
@@ -321,26 +322,30 @@ void contact()
                 break;
         case 4:
                 cout<<"Enter message: ";
-                cin>>prob;
+                std::cin>>prob;
                 cout<<"\nAdmin will be notified.\n";
-                break;
                 
+                break;  
         case 5:
                 cout<<"Exiting...\n";
                 break;
-        
         default:
                 cout<<"Enter Valid Input";
                 break;
     }
-    start();
+    
+    menu();
 }
 void update()
 {
     if(n==1)
-    cout<<prob<<endl;
+    {
+    cout<<starting<<" to "<<dest;
+    cout<<" : "<<prob<<endl;
+    }
     else if(n==2)
-    cout<<"Arrived"<<endl;
+    cout<<starting<<" to "<<dest<<" Arrived"<<endl;
     else if(n==4)
     cout<<prob<<endl;
+    start();
 }
