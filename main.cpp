@@ -22,8 +22,9 @@ void start()
 }
 void menu()
 {
-    cout<<"\tWelcome to IDLS";
+    cout<<"\n\n---------------------------------------------\n\tWelcome to IDLS\n---------------------------------------------";
     cout<<"\n\n1.Admin\t 2.Driver 3.Contact Admin 4.Notification 5.Exit\n";
+    cout<<"\n";
     int num;
     cin>>num;
     switch (num)
@@ -41,6 +42,7 @@ void menu()
             update();
             break;
         case 5:
+            cout<<"Exiting...\n";
             exit(0);
             break;
         default:
@@ -284,6 +286,7 @@ void admin()
             break;
             defult:
                 cout<<"Enter Valid Input";
+        cout<<"\n\n";
 
     }
     start();
@@ -295,28 +298,26 @@ void driver()
     {
         date =  date - 1;
     }
-    cout<<"\nReporting Time: "<<report_timing;
+    cout<<"\n\nReporting Time: "<<report_timing;
     cout<<"\nStarting Time: "<<start_timing;
     cout<<"\nDestination: "<<dest;
     cout<<"\nStarting Date: "<<date<<endl;
-    cout<<"\nUpload document for verification\n";
+    cout<<"Upcoming Border Post, Upload Required Documents"<<endl;
     FILE *f;
     f = fopen("file.pdf","a+");
     if(f == NULL)
     {
-        cout<<"Not Verified\n"<<endl;
+        cout<<"Documents Not Verified\n"<<endl;
     }
     else
     {
-        cout<<"Verified\n"<<endl;
+        cout<<"Documents Verified\n"<<endl;
     }
-    fclose(f);
-
     start();
 }
 void contact()
 {
-    cout<<"1. Report Emergency\n2. Arrived\n3. Nearest Rest Stop\n4. Chat with Admin\n5. Exit\n";
+    cout<<"\n\n1. Report Emergency\n2. Arrived\n3. Nearest Rest Stop\n4. Chat with Admin\n5. Exit\n\n";
     cin>>n;
     switch (n)
     {
